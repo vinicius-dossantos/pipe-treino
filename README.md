@@ -17,6 +17,7 @@ pipe-treino/
 └── src/
     ├── train.py              # treino + tracking + registro no MLflow
     ├── promote_to_staging.py # promove uma versão do modelo no registry
+    ├── fix_mlruns_paths.py    # corrige caminhos absolutos do mlruns versionado
     └── smoke_test.py          # valida o modelo em staging (local e no CI)
 ```
 
@@ -105,6 +106,7 @@ válidas para um pequeno lote de exemplo.
 Rodar o mesmo smoke test localmente, sem precisar do GitHub Actions:
 
 ```bash
+python src/fix_mlruns_paths.py
 python src/smoke_test.py
 ```
 
@@ -127,3 +129,14 @@ um banco Postgres com artefatos em S3/GCS — nunca dentro do próprio
 repositório git. Vale deixar isso explícito para a turma: aqui trocamos
 "infraestrutura compartilhada" por "arquivo versionado" só para caber
 numa aula, sem precisar de credenciais de nuvem.
+
+O `src/fix_mlruns_paths.py` existe só por causa dessa gambiarra: o
+MLflow grava caminho absoluto de máquina dentro dos `meta.yaml` do
+`mlruns/`, então toda vez que esse repositório é clonado ou copiado
+para um lugar novo (seu Mac, o runner do GitHub, a máquina de outra
+pessoa), os caminhos gravados apontam para uma pasta que não existe
+ali. O script reescreve esses caminhos para a pasta `mlruns/` local,
+a partir de onde o repositório está agora — e roda tanto localmente
+quanto como primeiro passo do workflow do GitHub Actions. Num
+pipeline real, com um tracking server remoto, esse problema
+simplesmente não existiria.
