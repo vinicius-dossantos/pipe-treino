@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1789336508768
+current_stage: None
+description: null
+last_updated_timestamp: 1789336508768
+name: wine-classifier
+run_id: 2397bb9120e249aa8e5b82dcd0349a64
+run_link: null
+source: /Users/viniciussantos/Documents/GitHub/pipe-treino/mlruns/425699999355405515/2397bb9120e249aa8e5b82dcd0349a64/artifacts/model
+status: READY
+status_message: null
+storage_location: /Users/viniciussantos/Documents/GitHub/pipe-treino/mlruns/425699999355405515/2397bb9120e249aa8e5b82dcd0349a64/artifacts/model
+user_id: null
+version: 2

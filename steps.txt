@@ -1,0 +1,21 @@
+source .venv/bin/activate
+
+pip install -r requirements.txt 
+
+python src/train.py
+
+---- trocar os parametros de config.yaml
+
+    original 
+
+        n_estimators: 100
+        max_depth: 5
+
+    novo
+
+        n_estimators 5
+        max_depth 1
+
+mlflow ui --backend-store-uri mlruns --port 5001
+
+python src/smoke_test.py

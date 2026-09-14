@@ -1,0 +1,20 @@
+# MLflow
+# ATENÇÃO: mlruns/ está versionado de propósito, só para esta demo,
+# para que o GitHub Actions (Parte 3) enxergue o mesmo registry que
+# você usa localmente. Numa arquitetura real, o tracking/registry
+# fica num servidor compartilhado (ex: Databricks-managed MLflow,
+# ou artifact store em S3/GCS + backend Postgres) — nunca dentro
+# do repositório git. Ver nota no README.
+mlartifacts/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Ambiente / editor
+.env
+.DS_Store
+.vscode/
+.idea/

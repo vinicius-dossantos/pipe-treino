@@ -1,0 +1,18 @@
+# Configuração do pipeline de treino.
+# Hiperparâmetros e caminhos ficam aqui, fora do código —
+# alterar um valor não exige tocar em train.py.
+
+data:
+  test_size: 0.2
+  random_state: 42
+
+model:
+  n_estimators: 100
+  max_depth: 5
+
+mlflow:
+  tracking_uri: "mlruns"
+  experiment_name: "wine-classifier"
+
+registry:
+  model_name: "wine-classifier"

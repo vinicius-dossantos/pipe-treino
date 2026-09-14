@@ -1,0 +1,15 @@
+artifact_uri: /Users/viniciussantos/Documents/GitHub/pipe-treino/mlruns/425699999355405515/2397bb9120e249aa8e5b82dcd0349a64/artifacts
+end_time: 1789336508770
+entry_point_name: ''
+experiment_id: '425699999355405515'
+lifecycle_stage: active
+run_id: 2397bb9120e249aa8e5b82dcd0349a64
+run_name: capable-auk-759
+run_uuid: 2397bb9120e249aa8e5b82dcd0349a64
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789336507612
+status: 3
+tags: []
+user_id: viniciussantos

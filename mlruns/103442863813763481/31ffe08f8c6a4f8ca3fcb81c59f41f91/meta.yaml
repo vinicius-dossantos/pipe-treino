@@ -1,0 +1,15 @@
+artifact_uri: /Users/viniciussantos/Documents/GitHub/pipe-treino/mlruns/103442863813763481/31ffe08f8c6a4f8ca3fcb81c59f41f91/artifacts
+end_time: 1789338212972
+entry_point_name: ''
+experiment_id: '103442863813763481'
+lifecycle_stage: active
+run_id: 31ffe08f8c6a4f8ca3fcb81c59f41f91
+run_name: aged-skink-281
+run_uuid: 31ffe08f8c6a4f8ca3fcb81c59f41f91
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1789338209834
+status: 3
+tags: []
+user_id: root
