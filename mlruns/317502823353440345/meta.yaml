@@ -1,0 +1,6 @@
+artifact_location: /home/claude/pipe-treino/mlruns/317502823353440345
+creation_time: 1789393046854
+experiment_id: '317502823353440345'
+last_update_time: 1789393046854
+lifecycle_stage: active
+name: wine-classifier

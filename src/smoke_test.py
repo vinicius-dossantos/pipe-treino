@@ -19,8 +19,14 @@ VALID_CLASSES = {0, 1, 2}
 SAMPLE_SIZE = 5
 
 
+def banner(message: str) -> None:
+    print(f"=====[ {message} ]=====")
+
+
 def main() -> int:
     mlflow.set_tracking_uri("mlruns")
+
+    banner("SMOKE TEST — INÍCIO")
 
     model_uri = f"models:/{MODEL_NAME}/{STAGE}"
     print(f"Carregando modelo de {model_uri}")
@@ -28,6 +34,7 @@ def main() -> int:
     try:
         model = mlflow.pyfunc.load_model(model_uri)
     except Exception as exc:
+        banner("SMOKE TEST — FALHOU")
         print(f"FALHA: não foi possível carregar o modelo — {exc}")
         return 1
 
@@ -37,15 +44,18 @@ def main() -> int:
     predictions = model.predict(sample)
 
     if len(predictions) != SAMPLE_SIZE:
+        banner("SMOKE TEST — FALHOU")
         print(f"FALHA: esperado {SAMPLE_SIZE} previsões, recebido {len(predictions)}")
         return 1
 
     invalid = [p for p in predictions if int(p) not in VALID_CLASSES]
     if invalid:
+        banner("SMOKE TEST — FALHOU")
         print(f"FALHA: previsões fora do intervalo esperado: {invalid}")
         return 1
 
     print(f"OK — {SAMPLE_SIZE} previsões válidas: {list(predictions)}")
+    banner("SMOKE TEST — PASSOU")
     return 0
 
 
