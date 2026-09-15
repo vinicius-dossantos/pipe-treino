@@ -7,8 +7,8 @@ data:
   random_state: 42
 
 model:
-  n_estimators: 100
-  max_depth: 5
+  n_estimators: 35
+  max_depth: 3
 
 mlflow:
   tracking_uri: "mlruns"
